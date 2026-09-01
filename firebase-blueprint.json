@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "entities": {
+    "UserProfile": {
+      "collection": "users",
+      "description": "User profile with accessible organizations and preferences",
+      "fields": {
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "activeCompanyId": { "type": "string" },
+        "accessibleCompanies": { "type": "array" },
+        "createdAt": { "type": "string" }
+      }
+    },
+    "Company": {
+      "collection": "companies",
+      "description": "Company entity for multi-entity AR accounting",
+      "fields": {
+        "name": { "type": "string" },
+        "code": { "type": "string" },
+        "currency": { "type": "string" },
+        "taxId": { "type": "string" },
+        "industry": { "type": "string" },
+        "createdBy": { "type": "string" },
+        "createdAt": { "type": "string" }
+      }
+    },
+    "Invoice": {
+      "collection": "companies/{companyId}/invoices",
+      "description": "Accounts receivable invoices per company",
+      "fields": {
+        "invoiceNumber": { "type": "string" },
+        "customerId": { "type": "string" },
+        "customerName": { "type": "string" },
+        "amount": { "type": "number" },
+        "balance": { "type": "number" },
+        "status": { "type": "string" },
+        "dueDate": { "type": "string" },
+        "issueDate": { "type": "string" }
+      }
+    },
+    "Customer": {
+      "collection": "companies/{companyId}/customers",
+      "description": "Company customers and credit ratings",
+      "fields": {
+        "name": { "type": "string" },
+        "code": { "type": "string" },
+        "email": { "type": "string" },
+        "creditLimit": { "type": "number" },
+        "riskRating": { "type": "string" }
+      }
+    },
+    "Payment": {
+      "collection": "companies/{companyId}/payments",
+      "description": "Payments received and applied to receivables",
+      "fields": {
+        "invoiceId": { "type": "string" },
+        "amount": { "type": "number" },
+        "paymentDate": { "type": "string" },
+        "paymentMethod": { "type": "string" }
+      }
+    }
+  }
+}

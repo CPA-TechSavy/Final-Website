@@ -1,0 +1,6 @@
+{
+  "name": "Accounts Receivable Monitor",
+  "description": "Comprehensive B2B billing invoice management, automated billing numbering, customizable sales tax rates, PDF statement generation, customer email dispatch, aging schedules, and cash flow forecasting.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
