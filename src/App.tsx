@@ -8,7 +8,7 @@ import {
   TrendingUp,
   Landmark,
 } from 'lucide-react';
-import { AuthProvider, useAuth } from './context/AuthContext';
+import { AuthProvider, useAuth } from './context/Authcontext';
 import { ReceivablesProvider, useReceivables } from './context/ReceivablesContext';
 import { Sidebar } from './components/Sidebar';
 import { Header } from './components/Header';
